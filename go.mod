@@ -1,4 +1,4 @@
-module go_html_ui
+module github.com/rusl222/go_html_ui
 
 go 1.21
 
