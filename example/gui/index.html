@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html-App</title>
+    <script src="static/guiws7.js"></script>
+    <link rel="stylesheet" href="static/simple.min.css">
+</head>
+<body>
+    <header></header>
+
+    <label>Введите имя</label>
+    <input type="text" id="edit1"/>
+    <input type="button" id="button1" value="Сказать привет"/>
+    <input type="button" id="button2" value="Поменять цвет"/>
+    <br><label id="label1">...</label>
+
+    <footer>
+        <div id="errorClose" hidden="true">Нет соединения
+            <input type="text" id="address" value="ws://127.0.0.1:8080/gui">
+            <button onclick="gui.initChannel(document.getElementById('address').value)" >Подключить</button>
+        </div>
+    </footer>
+</body>
+</html>
