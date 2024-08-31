@@ -58,9 +58,13 @@ func (g gui) Value(id string) interface{} {
 }
 
 func (g gui) SetValue(id string, value interface{}) {
+	if g.driver.sendChan == nil {
+		return
+	}
 	arguments := make([]interface{}, 2)
 	arguments[0] = id
 	arguments[1] = value
+
 	g.driver.sendChan <- Message{Action: "setValue", Arguments: arguments}
 }
 
@@ -76,6 +80,9 @@ func (g gui) Attribute(id string, attr string) interface{} {
 }
 
 func (g gui) SetAttribute(id string, attr string, value interface{}) {
+	if g.driver.sendChan == nil {
+		return
+	}
 	arguments := make([]interface{}, 3)
 	arguments[0] = id
 	arguments[1] = attr
